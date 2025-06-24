@@ -1,0 +1,282 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-custom {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #dee2e6;
+  --bs-btn-border-color: #f8f9fa;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #d3d4d5;
+  --bs-btn-hover-border-color: #c6c7c8;
+  --bs-btn-focus-shadow-rgb: 211, 212, 213;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #c6c7c8;
+  --bs-btn-active-border-color: #babbbc;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #f8f9fa;
+  --bs-btn-disabled-border-color: #f8f9fa;
+}
+
+/* Base Navbar */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: transparent;
+}
+
+/* Container inside navbar */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+/* Logo */
+.logo img {
+  height: 34px;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Dropdown structure */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Scroll effect class */
+.custom-navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Link styling */
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+/* Base styles (already included earlier) */
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Force black text inside the open mobile menu */
+  .custom-navbar .nav-links.open a {
+    color: black !important;
+  }
+
+
+  .nav-links a {
+    padding: 10px 0;
+  }
+
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 👈 Center the whole dropdown block */
+    text-align: center;
+    width: 100%;
+  }
+
+
+  .dropdown>a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    margin-top: 5px;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    align-items: center;
+    /* 👈 This centers the submenu items */
+    text-align: center;
+    /* 👈 Ensures text is also centered */
+    padding-left: 0 !important;
+    /* 👈 Remove extra indentation */
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 0;
+    font-weight: bold;
+  }
+}
+
+/* Default transparent state — white text */
+.custom-navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-navbar .nav-links a,
+.custom-navbar .dropdown-toggle {
+  color: white;
+  font-weight: 600;
+}
+
+/* When navbar is scrolled — white background with black text */
+.custom-navbar.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar.scrolled .nav-links a,
+.custom-navbar.scrolled .dropdown-toggle {
+  color: black;
+}
+
+#navbar-logo {
+  transition: opacity 0.3s ease;
+}
+
+#carouselExampleCaptions {
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+}
+
+#carouselExampleCaptions .carousel-item {
+  height: 100vh; /* full height for each item */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#carouselExampleCaptions img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.carousel-caption {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h3 {
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  font-size: 18px;
+}
+
+.featured {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  --bs-card-spacer-y: 1rem;
+  --bs-card-spacer-x: 1rem;
+  --bs-card-title-spacer-y: 0.5rem;
+  --bs-card-title-color: ;
+  --bs-card-subtitle-color: ;
+  --bs-card-border-width: var(--bs-border-width);
+  --bs-card-border-color: var(--bs-border-color-translucent);
+  --bs-card-border-radius: var(--bs-border-radius);
+  --bs-card-box-shadow: ;
+  --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  --bs-card-cap-padding-y: 0.5rem;
+  --bs-card-cap-padding-x: 1rem;
+  --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+  --bs-card-cap-color: ;
+  --bs-card-height: ;
+  --bs-card-color: ;
+  --bs-card-bg: var(--bs-body-bg);
+  --bs-card-img-overlay-padding: 1rem;
+  --bs-card-group-margin: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: var(--bs-card-height);
+  color: var(--bs-body-color);
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: none;
+}
+
+.contact-container {
+  margin-top: 50px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

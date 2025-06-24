@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>alemediaz IT Consultant</title>
+    <%- include("partials/head") %>
+</head>
+
+<body>
+    <%- include("partials/navigation") %>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/img/Animacion inicio.gif" class="d-block w-100" alt="GIF">
+                    <div class="carousel-caption">
+                        <h3>Aplicaciones web y software empresarial a medida</h3>
+                        <p>Desarrollamos la solución digital que tu negocio necesita.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="featured">
+            <h3 style="margin-bottom: 20px;">Servicios destacados</h3>
+            <div class="card-group">
+                <div class="card">
+                    <img src="/img/Imagen tienda online.svg" class="card-img-top" alt="..." width="252" height="180">
+                    <div class="card-body">
+                        <h5 class="card-title">Tiendas online</h5>
+                        <p class="card-text">Construimos tu sitio web con una potente plataforma de comercio electrónico
+                            de
+                            infinitas posibilidades. Diseñamos y desarrollamos tu tienda de forma totalmente
+                            personalizada,
+                            con las extensiones que precises. Además, implementamos soluciones de pago modernas, de
+                            fácil gestión y competitivas.</p>
+                        <button type="button" class="btn btn-custom">Light</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/img/Imagen aplicaciones a medida.svg" class="card-img-top" alt="..." width="234"
+                        height="180">
+                    <div class="card-body">
+                        <h5 class="card-title">Aplicaciones web a medida</h5>
+                        <p class="card-text">Además de tu propio sitio web totalmente personalizado, desarrollamos
+                            cualquier
+                            aplicación, plataforma o servicio web que necesites integrar para satisfacer tus necesidades
+                            y
+                            las de tus clientes.
+                        </p>
+                        <button type="button" class="btn btn-custom">Light</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/img/Imagen software empresarial.svg" class="card-img-top" alt="..." width="272"
+                        height="180">
+                    <div class="card-body">
+                        <h5 class="card-title">Software empresarial personalizado</h5>
+                        <p class="card-text">Si necesitas integrar un programa ERP o CRM que unifique todos los procesos
+                            de
+                            tu empresa, o simplemente quieres pasarte a la facturación electrónica y gestionar tu
+                            contabilidad de forma totalmente digital en un entorno moderno y eficiente, tenemos tu
+                            solución.
+                        </p>
+                        <button type="button" class="btn btn-custom">Light</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3"
+            style="display: flex; flex-direction: column; align-items: center; text-align: center; background-color: #f8f9fa;">
+            <img src="/img/Logotipo ClearBooks.png" class="card-img-top" alt="Logo ClearBooks"
+                style="width: 352px; height: 83px; margin-top: 40px;">
+            <div class="card-body">
+                <p class="card-text">Conoce ClearBooks, nuestra potente solución de contabilidad y facturación
+                    electrónica que te ayuda a
+                    simplificar la contabilidad de tu negocio. Crea facturas y presupuestos, gestiona tus clientes y
+                    proveedores, lleva un control de los impuestos y mucho más con ClearBooks.</p>
+                <button type="button" class="btn btn-custom">Light</button>
+            </div>
+        </div>
+
+        <div class="container contact-container">
+            <div class="row">
+                <!-- Left column for Map -->
+                <div class="col-md-6 map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1022.4123164460971!2d-5.916325658022886!3d43.54782040903421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd369b43c0895473%3A0x1be878ca36e189d6!2sBusiness%20Center%20La%20Curtidora!5e0!3m2!1sen!2ses!4v1750687130269!5m2!1sen!2ses"
+                        style="height: 400px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <!-- Right column for the Contact Form -->
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%- include("partials/footer") %>
+            <script>
+                const navbar = document.querySelector('.custom-navbar');
+                const logo = document.getElementById('navbar-logo');
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const navLinks = document.getElementById('nav-links');
+
+                // Toggle menu on mobile
+                hamburgerBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('open');
+                });
+
+                // Add or remove "scrolled" class based on scroll position
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 10) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+
+                // Optional: Close mobile menu on nav link click
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('open');
+                    });
+                });
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 10) {
+                        navbar.classList.add('scrolled');
+                        logo.src = '/img/Logotipo Alemediaz oscuro.png'; // 👈 black logo when scrolled
+                    } else {
+                        navbar.classList.remove('scrolled');
+                        logo.src = '/img/Logotipo Alemediaz claro.png'; // 👈 white logo when at top
+                    }
+                });
+
+                // Toggle dropdowns on mobile
+                document.querySelectorAll('.dropdown > a').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault(); // Prevent navigation
+                            const dropdown = this.parentElement;
+                            dropdown.classList.toggle('open');
+                        }
+                    });
+                });
+            </script>
+            <script src="/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
